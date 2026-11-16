@@ -1,0 +1,14 @@
+{
+  "name": "skribbl-clone-monorepo",
+  "private": true,
+  "version": "1.1.0",
+  "description": "Full-Stack Skribbl.io Clone aligned with the 30-Node System Architecture Knowledge Graph",
+  "scripts": {
+    "sync-types": "node scripts/sync-types.mjs",
+    "dev:server": "npm run sync-types && npm --prefix server run dev",
+    "dev:client": "npm run sync-types && npm --prefix client run dev",
+    "build:server": "npm run sync-types && npm --prefix server run build",
+    "build:client": "npm run sync-types && npm --prefix client run build",
+    "test:e2e": "npm run sync-types && node server/test/run-verification.mjs"
+  }
+}

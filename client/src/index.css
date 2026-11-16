@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@keyframes aurora-wave-1 {
+  0%, 100% {
+    transform: translate3d(0%, 0%, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(8%, -6%, 0) scale(1.12) rotate(6deg);
+  }
+}
+
+@keyframes aurora-wave-2 {
+  0%, 100% {
+    transform: translate3d(0%, 0%, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-10%, 8%, 0) scale(1.15) rotate(-8deg);
+  }
+}
+
+@keyframes concentric-spin {
+  0% {
+    transform: rotate(0deg) scale(0.96);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.04);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.96);
+  }
+}
+
+.aurora-bg {
+  background-color: #010413;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.aurora-blob-1 {
+  position: fixed;
+  top: -15%;
+  left: -10%;
+  width: 55vw;
+  height: 55vw;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(44, 240, 138, 0.35) 0%, rgba(56, 189, 248, 0.12) 50%, transparent 72%);
+  filter: blur(64px);
+  pointer-events: none;
+  animation: aurora-wave-1 14s ease-in-out infinite;
+  z-index: 0;
+}
+
+.aurora-blob-2 {
+  position: fixed;
+  bottom: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.32) 0%, rgba(44, 240, 138, 0.14) 48%, transparent 72%);
+  filter: blur(72px);
+  pointer-events: none;
+  animation: aurora-wave-2 18s ease-in-out infinite;
+  z-index: 0;
+}
+
+.loading-circle-1 {
+  width: 72px;
+  height: 72px;
+  border-radius: 9999px;
+  border: 3px solid rgba(44, 240, 138, 0.2);
+  border-top-color: #2CF08A;
+  animation: concentric-spin 1.2s linear infinite;
+  box-shadow: 0 0 24px rgba(44, 240, 138, 0.35);
+}
+
+.loading-circle-2 {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  border: 3px solid rgba(56, 189, 248, 0.2);
+  border-bottom-color: #38BDF8;
+  animation: concentric-spin 0.9s linear infinite reverse;
+}

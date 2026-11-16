@@ -1,0 +1,29 @@
+{
+  "name": "skribblio-server",
+  "version": "1.1.0",
+  "description": "Authoritative OOP Node.js + Express 5 + Socket.IO 4.8 Server",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "node ../scripts/sync-types.mjs",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test:e2e": "tsx test/e2e-simulation.ts",
+    "test": "node test/run-verification.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.0.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "socket.io-client": "^4.8.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
