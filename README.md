@@ -1,6 +1,6 @@
-# Skribbl.io Clone — Aurora Edition (30-Subsystem Knowledge Graph Architecture)
+# Skribbl.io Clone
 
-Full-stack multiplayer drawing and guessing game engineered according to the **30-Subsystem System Architecture Knowledge Graph** (`docs/knowledge-graph.html`).
+A full-stack, real-time multiplayer drawing and guessing game inspired by Skribbl.io. Built with **React 19, TypeScript, Tailwind CSS, Node.js, Express, and Socket.IO**.
 
 ## Architecture & Directory Structure
 
@@ -44,8 +44,6 @@ skribbl-clone/
 │   │   ├── e2e-simulation.ts            # Headless Socket.IO E2E verifier (Alice & Bob)
 │   │   └── run-verification.mjs         # Contract & file integrity test runner
 │   └── render.yaml
-├── docs/
-│   └── knowledge-graph.html             # Interactive 30-Node System Architecture Knowledge Graph
 ├── package.json
 └── render.yaml
 ```
