@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Copy, Crown, Eye, Play, Sparkles, Users } from 'lucide-react';
 import { useSocket } from '../context/SocketContext';
 import { AvatarPicker } from './AvatarPicker';
@@ -42,7 +42,15 @@ export const LobbyView: React.FC = () => {
     clearError
   } = useSocket();
 
-  const [manualCode, setManualCode] = useState(inviteRoomParam || '');
+  useEffect(()=>{
+    const urlParams = new URLSearchParams(window.location.search);
+    const roomParam = urlParams.get('room');
+    if(roomParam){
+      setManualCode(roomParam)
+    }
+  }, [])
+
+  const [manualCode, setManualCode] = useState('');
   const [customWordsText, setCustomWordsText] = useState('');
   const [copiedInvite, setCopiedInvite] = useState(false);
   const [selectedParticipant, setSelectedParticipant] = useState<PlayerState | null>(null);
